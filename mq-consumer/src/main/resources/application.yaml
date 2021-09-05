@@ -1,11 +1,11 @@
 server:
-  port: 8022
+  port: 8021
 spring:
   application:
     name: rabbitmq-consumer
-  #ÅäÖÃrabbitMq ·şÎñÆ÷
+  #é…ç½®rabbitMq æœåŠ¡å™¨
   rabbitmq:
-    host: 127.0.0.1
+    host: 193.112.82.144
     port: 5672
-    username: guest
-    password: guest
+    username: admin
+    password: admin

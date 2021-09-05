@@ -20,11 +20,11 @@ public class TopicMqController {
 
     @GetMapping("/sendMsg1")
     public void sendTopMsg1(@RequestParam("msg")String message) {
-        topicMqService.sendTopicMessage1(message);
+        topicMqService.sendManTopicMessage(message);
     }
 
     @GetMapping("/sendMsg2")
     public void sendTopMsg2(@RequestParam("msg")String message) {
-        topicMqService.sendTopicMessage2(message);
+        topicMqService.sendAllTopicMessage(message);
     }
 }

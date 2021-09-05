@@ -23,6 +23,10 @@ public class AckMqController {
     @Autowired
     RabbitTemplate rabbitTemplate;
 
+    /**
+     * 消息推送到server，但找不到交换机
+     * @return
+     */
     @GetMapping("/TestMessageAck")
     public String TestMessageAck() {
         String messageId = String.valueOf(UUID.randomUUID());
@@ -36,6 +40,10 @@ public class AckMqController {
         return "ok";
     }
 
+    /**
+     * 找到交换机，但未找到消息队列
+     * @return
+     */
     @GetMapping("/TestMessageAck2")
     public String TestMessageAck2() {
         String messageId = String.valueOf(UUID.randomUUID());

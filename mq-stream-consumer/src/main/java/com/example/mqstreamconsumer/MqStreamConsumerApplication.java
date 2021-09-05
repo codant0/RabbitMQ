@@ -1,4 +1,4 @@
-package com.bgtech.mqprovider;
+package com.example.mqstreamconsumer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -6,11 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @Slf4j
 @SpringBootApplication
-public class MqProviderApplication {
+public class MqStreamConsumerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MqProviderApplication.class, args);
-        log.info("MQ生产者服务启动成功");
+        SpringApplication.run(MqStreamConsumerApplication.class, args);
+        log.info("mq-stream-consumer服务启动成功！");
     }
 
 }

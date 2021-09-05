@@ -22,7 +22,7 @@ public class TopicMqService {
     @Autowired
     RabbitTemplate rabbitTemplate;
 
-    public void sendTopicMessage1(String message) {
+    public void sendManTopicMessage(String message) {
         String messageId = String.valueOf(UUID.randomUUID());
         String messageData = message;
         String createTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
@@ -30,10 +30,10 @@ public class TopicMqService {
         manMap.put("messageId", messageId);
         manMap.put("messageData", messageData);
         manMap.put("createTime", createTime);
-        rabbitTemplate.convertAndSend("topicExchange", "topic.part", manMap);
+        rabbitTemplate.convertAndSend("topicExchange", "topic.man", manMap);
     }
 
-    public void sendTopicMessage2(String message) {
+    public void sendAllTopicMessage(String message) {
         String messageId = String.valueOf(UUID.randomUUID());
         String messageData = message;
         String createTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
@@ -41,6 +41,6 @@ public class TopicMqService {
         womanMap.put("messageId", messageId);
         womanMap.put("messageData", messageData);
         womanMap.put("createTime", createTime);
-        rabbitTemplate.convertAndSend("topicExchange", "topic.all", womanMap);
+        rabbitTemplate.convertAndSend("topicExchange", "topic.woman", womanMap);
     }
 }

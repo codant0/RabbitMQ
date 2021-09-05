@@ -11,7 +11,6 @@ import java.util.Map;
  * @date 2020/11/20 0020 20:32
  */
 @Component
-//监听的队列名称 TestDirectQueue
 @RabbitListener(queues = "TestDirectQueue")
 public class DirectMsgReceiver {
 

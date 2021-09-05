@@ -1,18 +1,18 @@
 server:
-  port: 8021
+  port: 8022
 spring:
-  #¸øÏîÄ¿À´¸öÃû×Ö
+  #ç»™é¡¹ç›®æ¥ä¸ªåå­—
   application:
     name: rabbitmq-provider
-  #ÅäÖÃrabbitMq ·şÎñÆ÷
+  #é…ç½®rabbitMq æœåŠ¡å™¨
   rabbitmq:
-    host: 127.0.0.1
+    host: 193.112.82.144
     port: 5672
-    username: guest
-    password: guest
-    #ĞéÄâhost ¿ÉÒÔ²»ÉèÖÃ,Ê¹ÓÃserverÄ¬ÈÏhost
+    username: admin
+    password: admin
+    #è™šæ‹Ÿhost å¯ä»¥ä¸è®¾ç½®,ä½¿ç”¨serveré»˜è®¤host
 #    virtual-host: host
-    #È·ÈÏÏûÏ¢ÒÑ·¢ËÍµ½½»»»»ú(Exchange)
+    #ç¡®è®¤æ¶ˆæ¯å·²å‘é€åˆ°äº¤æ¢æœº(Exchange)
     publisher-confirm-type: correlated
-    #È·ÈÏÏûÏ¢ÒÑ·¢ËÍµ½¶ÓÁĞ(Queue)
+    #ç¡®è®¤æ¶ˆæ¯å·²å‘é€åˆ°é˜Ÿåˆ—(Queue)
     publisher-returns: true

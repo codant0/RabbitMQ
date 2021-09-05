@@ -8,14 +8,15 @@ import java.util.Map;
 
 /**
  * @author HuangJF
- * @date 2020/11/23 0023 19:30
+ * @date 2020/11/23 0023 19:27
+ * topic.woman 队列 绑定的主题交换机键值为topic.#
  */
 @Component
-@RabbitListener(queues = "topic.all")
+@RabbitListener(queues = "topic.woman")
 public class TopicAllReceiver {
 
     @RabbitHandler
     public void process(Map message) {
-        System.out.println("all topic message: " + message);
+        System.out.println("woman receive topic message: " + message);
     }
 }

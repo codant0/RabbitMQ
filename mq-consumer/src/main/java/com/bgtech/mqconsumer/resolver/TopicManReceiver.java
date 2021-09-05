@@ -8,14 +8,14 @@ import java.util.Map;
 
 /**
  * @author HuangJF
- * @date 2020/11/23 0023 19:27
+ * @date 2020/11/23 0023 19:30
  */
 @Component
-@RabbitListener(queues = "topic.part")
-public class TopicPartReceiver {
+@RabbitListener(queues = "topic.man")
+public class TopicManReceiver {
 
     @RabbitHandler
     public void process(Map message) {
-        System.out.println("part topic message: " + message);
+        System.out.println("man topic receive message: " + message);
     }
 }

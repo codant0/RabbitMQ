@@ -1,0 +1,25 @@
+server:
+  port: 8024
+spring:
+  application:
+    name: mq-stream-producer
+  rabbitmq:
+    host: 193.112.82.144
+    port: 5672
+    username: admin
+    password: admin
+  cloud:
+    stream:
+      bindings:
+        # 普通消息的目标交换机
+        user-msg-producer:
+          destination: userMsg-exchange
+        # 配置延时消息的目标交换机
+        user-msg-delay-producer:
+          destination: user-delay-msg-exchange
+      # 利用Spring Cloud Stream的延时特性配置延迟消息
+      rabbit:
+        bindings:
+          user-msg-delay-producer:
+            producer:
+              delayedExchange: true

@@ -25,7 +25,7 @@ public class DirectRabbitConfig {
         return new Queue("TestDirectQueue",true);
     }
 
-    //Direct交换机 起名：TestDirectExchange
+    //Direct交换机
     @Bean
     DirectExchange TestDirectExchange() {
         //  return new DirectExchange("TestDirectExchange",true,true);

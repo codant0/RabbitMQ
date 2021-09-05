@@ -40,6 +40,8 @@ public class FanoutRabbitConfig {
         return new FanoutExchange("fanoutExchange");
     }
 
+    // 将多个消息队列绑定到同一个扇形交换机
+
     @Bean
     Binding bindingExchangeA() {
         return BindingBuilder.bind(queueA()).to(fanoutExchange());

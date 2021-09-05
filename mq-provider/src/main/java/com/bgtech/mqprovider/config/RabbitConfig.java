@@ -24,6 +24,7 @@ public class RabbitConfig {
 
         // 消息到交换机
         rabbitTemplate.setConfirmCallback((CorrelationData correlationData, boolean ack, String cause) -> {
+            System.out.println("确认消息已发送到交换机: ");
             System.out.println("ConfirmCallback:     " + "相关数据：" + correlationData);
             System.out.println("ConfirmCallback:     " + "确认情况：" + ack);
             System.out.println("ConfirmCallback:     " + "原因：" + cause);
@@ -31,6 +32,7 @@ public class RabbitConfig {
 
         // 消息到队列
         rabbitTemplate.setReturnCallback((Message message, int replyCode, String replyText, String exchange, String routingKey) -> {
+            System.out.println("确认消息已发送到消息队列");
             System.out.println("ReturnCallback:     " + "消息：" + message);
             System.out.println("ReturnCallback:     " + "回应码：" + replyCode);
             System.out.println("ReturnCallback:     " + "回应信息："+ replyText);

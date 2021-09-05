@@ -14,17 +14,17 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class TopicRabbitConfig {
     //绑定键
-    public final static String part = "topic.part";
-    public final static String all = "topic.all";
+    public final static String MAN = "topic.man";
+    public final static String WOMAN = "topic.woman";
 
     @Bean
     public Queue firstQueue() {
-        return new Queue(TopicRabbitConfig.part);
+        return new Queue(TopicRabbitConfig.MAN);
     }
 
     @Bean
     public Queue secondQueue() {
-        return new Queue(TopicRabbitConfig.all);
+        return new Queue(TopicRabbitConfig.WOMAN);
     }
 
     @Bean
@@ -37,7 +37,7 @@ public class TopicRabbitConfig {
     //这样只要是消息携带的路由键是topic.man,才会分发到该队列
     @Bean
     Binding bindingExchangeMessage() {
-        return BindingBuilder.bind(firstQueue()).to(exchange()).with(part);
+        return BindingBuilder.bind(firstQueue()).to(exchange()).with(MAN);
     }
 
     //将secondQueue和topicExchange绑定,而且绑定的键值为用上通配路由键规则topic.#
